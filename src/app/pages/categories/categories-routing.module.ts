@@ -6,11 +6,13 @@ import { CategoryFormComponent } from "./category-form/category-form.component";
 
 
 const routes: Routes = [
-  { path: 'categories', loadChildren: './pages/categories/categories.module#CategoriesModule' }
+  { path: '', component: CategoryListComponent },
+  { path: 'new', component: CategoryFormComponent},
+  { path: 'id/edit', component: CategoryFormComponent}
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class CategoriesRoutingModule { }
